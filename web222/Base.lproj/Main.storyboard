@@ -1,25 +1,85 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="web222" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Vv-P9-MwB">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S5S-XV-WVO">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQC-Ai-4Aa">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem systemItem="stop" id="WpA-d8-FIg">
+                                        <connections>
+                                            <action selector="stopLoading" destination="S5S-XV-WVO" id="Dz8-qO-tDU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="refresh" id="bfL-XZ-dO6">
+                                        <connections>
+                                            <action selector="reload" destination="S5S-XV-WVO" id="SdW-sf-w04"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cnK-8p-SOb"/>
+                                    <barButtonItem systemItem="rewind" id="wKw-Rg-SCG">
+                                        <connections>
+                                            <action selector="goForward" destination="S5S-XV-WVO" id="R8j-hG-alr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="fastForward" id="mG5-AC-HJE">
+                                        <connections>
+                                            <action selector="goBack" destination="S5S-XV-WVO" id="fJz-Do-Khm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TQC-Ai-4Aa" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="0aI-7S-pYU"/>
+                            <constraint firstItem="3Vv-P9-MwB" firstAttribute="leading" secondItem="S5S-XV-WVO" secondAttribute="leading" id="3T4-a4-rMv"/>
+                            <constraint firstItem="3Vv-P9-MwB" firstAttribute="bottom" secondItem="TQC-Ai-4Aa" secondAttribute="top" id="9vU-aD-Sqk"/>
+                            <constraint firstItem="3Vv-P9-MwB" firstAttribute="trailing" secondItem="S5S-XV-WVO" secondAttribute="trailing" id="Byc-wF-VGh"/>
+                            <constraint firstAttribute="trailing" secondItem="TQC-Ai-4Aa" secondAttribute="trailing" id="Evf-lU-bNu"/>
+                            <constraint firstItem="S5S-XV-WVO" firstAttribute="trailing" secondItem="TQC-Ai-4Aa" secondAttribute="trailing" id="ZOu-my-uGB"/>
+                            <constraint firstItem="S5S-XV-WVO" firstAttribute="bottom" secondItem="TQC-Ai-4Aa" secondAttribute="top" id="Zn3-w0-4SY"/>
+                            <constraint firstItem="S5S-XV-WVO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dtT-35-fY0"/>
+                            <constraint firstItem="TQC-Ai-4Aa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rIT-Wj-W4c"/>
+                            <constraint firstItem="3Vv-P9-MwB" firstAttribute="top" secondItem="S5S-XV-WVO" secondAttribute="top" id="rNQ-MC-bgy"/>
+                            <constraint firstItem="3Vv-P9-MwB" firstAttribute="leading" secondItem="TQC-Ai-4Aa" secondAttribute="leading" id="vOj-Np-IGb"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nPT-6I-gUD"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="webview" destination="S5S-XV-WVO" id="yAx-mc-qY6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="820.5" y="245.5"/>
         </scene>
     </scenes>
 </document>
