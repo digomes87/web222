@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8zs-yp-eXz">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -26,11 +27,8 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="SLc-hb-qEY"/>
-                                </constraints>
                             </webView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQC-Ai-4Aa">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQC-Ai-4Aa">
                                 <rect key="frame" x="1" y="623" width="375" height="44"/>
                                 <animations/>
                                 <items>
@@ -57,40 +55,72 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="9pf-ca-jFH">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="9pf-ca-jFH">
                                 <rect key="frame" x="169" y="249" width="37" height="37"/>
                                 <animations/>
                                 <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FGk-JL-IHM">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <animations/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="JWv-q5-3JZ"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TQC-Ai-4Aa" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="0aI-7S-pYU"/>
-                            <constraint firstItem="3Vv-P9-MwB" firstAttribute="leading" secondItem="S5S-XV-WVO" secondAttribute="leading" id="3T4-a4-rMv"/>
+                            <constraint firstItem="FGk-JL-IHM" firstAttribute="bottom" secondItem="3Vv-P9-MwB" secondAttribute="top" id="2Vv-HV-uuH"/>
+                            <constraint firstAttribute="trailing" secondItem="S5S-XV-WVO" secondAttribute="trailing" id="2rp-ef-RHO"/>
                             <constraint firstItem="9pf-ca-jFH" firstAttribute="centerX" secondItem="3Vv-P9-MwB" secondAttribute="centerX" id="781-of-clt"/>
-                            <constraint firstItem="3Vv-P9-MwB" firstAttribute="bottom" secondItem="TQC-Ai-4Aa" secondAttribute="top" id="9vU-aD-Sqk"/>
-                            <constraint firstItem="3Vv-P9-MwB" firstAttribute="trailing" secondItem="S5S-XV-WVO" secondAttribute="trailing" id="Byc-wF-VGh"/>
-                            <constraint firstAttribute="trailing" secondItem="TQC-Ai-4Aa" secondAttribute="trailing" id="Evf-lU-bNu"/>
+                            <constraint firstItem="FGk-JL-IHM" firstAttribute="leading" secondItem="3Vv-P9-MwB" secondAttribute="leading" id="CK4-8Q-avP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TQC-Ai-4Aa" secondAttribute="trailing" constant="-17" id="FuV-UZ-Dbw"/>
+                            <constraint firstItem="S5S-XV-WVO" firstAttribute="bottom" secondItem="TQC-Ai-4Aa" secondAttribute="top" id="GVM-yb-YAO"/>
+                            <constraint firstItem="TQC-Ai-4Aa" firstAttribute="top" secondItem="3Vv-P9-MwB" secondAttribute="bottom" id="IuX-AW-dXj"/>
+                            <constraint firstItem="S5S-XV-WVO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Lhi-jP-chC"/>
+                            <constraint firstItem="FGk-JL-IHM" firstAttribute="trailing" secondItem="3Vv-P9-MwB" secondAttribute="trailing" id="WoF-B7-8eL"/>
                             <constraint firstItem="9pf-ca-jFH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="229" id="XWC-dP-Ywl"/>
-                            <constraint firstItem="S5S-XV-WVO" firstAttribute="trailing" secondItem="TQC-Ai-4Aa" secondAttribute="trailing" id="ZOu-my-uGB"/>
-                            <constraint firstItem="S5S-XV-WVO" firstAttribute="bottom" secondItem="TQC-Ai-4Aa" secondAttribute="top" id="Zn3-w0-4SY"/>
-                            <constraint firstItem="S5S-XV-WVO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dtT-35-fY0"/>
-                            <constraint firstItem="TQC-Ai-4Aa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rIT-Wj-W4c"/>
-                            <constraint firstItem="3Vv-P9-MwB" firstAttribute="top" secondItem="S5S-XV-WVO" secondAttribute="top" id="rNQ-MC-bgy"/>
-                            <constraint firstItem="3Vv-P9-MwB" firstAttribute="leading" secondItem="TQC-Ai-4Aa" secondAttribute="leading" id="vOj-Np-IGb"/>
+                            <constraint firstItem="TQC-Ai-4Aa" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="oq3-dV-UOa"/>
+                            <constraint firstItem="S5S-XV-WVO" firstAttribute="leading" secondItem="3Vv-P9-MwB" secondAttribute="leading" id="qWi-RF-cdd"/>
+                            <constraint firstItem="S5S-XV-WVO" firstAttribute="top" secondItem="3Vv-P9-MwB" secondAttribute="top" id="wcq-cu-JxQ"/>
+                            <constraint firstItem="S5S-XV-WVO" firstAttribute="trailing" secondItem="3Vv-P9-MwB" secondAttribute="trailing" id="xm3-2o-ICq"/>
+                            <constraint firstItem="TQC-Ai-4Aa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-15" id="yaz-4D-95X"/>
+                            <constraint firstItem="FGk-JL-IHM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ztY-MY-uKl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nPT-6I-gUD"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="indicator" destination="9pf-ca-jFH" id="kei-ga-k2O"/>
+                        <outlet property="searchBar" destination="FGk-JL-IHM" id="CXV-Bp-oIn"/>
                         <outlet property="webview" destination="S5S-XV-WVO" id="yAx-mc-qY6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="820.5" y="245.5"/>
+            <point key="canvasLocation" x="1238.5" y="255.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i0K-ik-z7R">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8zs-yp-eXz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eH3-OG-FwX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0f9-aQ-PcS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tL6-0u-6pU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="820" y="245"/>
         </scene>
     </scenes>
 </document>

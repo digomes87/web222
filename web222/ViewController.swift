@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UIWebViewDelegate {
 
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var webview: UIWebView!
     @IBOutlet var indicator: UIActivityIndicatorView!
   
