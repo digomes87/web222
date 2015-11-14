@@ -54,6 +54,11 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="9pf-ca-jFH">
+                                <rect key="frame" x="169" y="325" width="37" height="37"/>
+                                <animations/>
+                                <color key="color" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -74,6 +79,7 @@
                     <navigationItem key="navigationItem" id="nPT-6I-gUD"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="indicator" destination="9pf-ca-jFH" id="kei-ga-k2O"/>
                         <outlet property="webview" destination="S5S-XV-WVO" id="yAx-mc-qY6"/>
                     </connections>
                 </viewController>
