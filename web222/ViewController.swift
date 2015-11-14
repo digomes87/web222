@@ -15,13 +15,16 @@ class ViewController: UIViewController, UIWebViewDelegate {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        //webview nao tem anda delegado e para funcionar o recurso de load deve-se associar
+        webview.delegate = self
+        
         let url = NSURL(string: "http://nylondev.wordpress.com")
        
         //quando usei essa simples requisicao a pagina carregou muito mais rapida
         let request = NSURLRequest(URL: url!)
         webview.loadRequest(request)
-        
+        indicator.hidden = true
         
         
         
@@ -51,12 +54,17 @@ class ViewController: UIViewController, UIWebViewDelegate {
     }
     
     func webViewDidStartLoad(webView: UIWebView) {
-        //<#code#>
+        indicator.startAnimating()
     }
 
 
     func webViewDidFinishLoad(webView: UIWebView) {
-        //
+        indicator.stopAnimating()
+    }
+    
+    
+    @IBAction func reloader(sender: AnyObject) {
+        indicator.startAnimating()
     }
 }
 
